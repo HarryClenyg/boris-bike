@@ -9,7 +9,7 @@ describe DockingStation do
         bike = Bike.new
         subject.dock(bike)
         # bike = subject.release_bike
-        expect(subject.release_bike).to be_working
+        expect(subject.release_bike.working?).to eq(true)
     end
 
     it "takes a bike and expects it can dock" do
@@ -34,6 +34,17 @@ describe DockingStation do
             expect { subject.release_bike }.to raise_error 'No bikes available'
         end
     end
+    
+    it "raises error when dock full" do
+      subject.capacity.times{ subject.dock(Bike.new) }
+        expect do
+        bike = Bike.new
+        subject.dock(bike)
+      end.to raise_error 'Dock is full'
+    end
 
+    it "docking station has a default capacity of 20" do
+      expect(subject.capacity).to eq(20)
+    end
 
 end
