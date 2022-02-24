@@ -47,4 +47,8 @@ describe DockingStation do
       expect(subject.capacity).to eq(20)
     end
 
+    it "bike can be reported as broken" do
+      expect(subject.dock(Bike.new).broken?).to eq 'Broken'
+    end
+
 end
