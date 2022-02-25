@@ -14,8 +14,8 @@ class DockingStation
     if @bike_array.empty?
       fail 'No bikes available'
     else
-      check_status
       @bike_array.pop
+      check_status
     end
   end
 
@@ -34,9 +34,11 @@ class DockingStation
   end
 
   def check_status
-    if @status = "broken"
-      fail 'This bike is broken'
+    if @bike.status == "broken"
+      @bike_array << @bike
+      fail "This bike is broken"
     else
+      @bike
     end
   end
 end
