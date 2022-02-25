@@ -14,6 +14,7 @@ class DockingStation
     if @bike_array.empty?
       fail 'No bikes available'
     else
+      sort_by_status
       @bike_array.pop
       check_status
     end
@@ -40,5 +41,9 @@ class DockingStation
     else
       @bike
     end
+  end
+
+  def sort_by_status
+    @bike_array.sort_by!(&:status)
   end
 end
