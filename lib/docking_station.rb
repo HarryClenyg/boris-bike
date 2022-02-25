@@ -35,7 +35,7 @@ class DockingStation
   end
 
   def check_status
-    if @bike.status == "broken"
+    if @bike.status == false 
       @bike_array << @bike
       fail "This bike is broken"
     else
