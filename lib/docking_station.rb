@@ -14,6 +14,7 @@ class DockingStation
     if @bike_array.empty?
       fail 'No bikes available'
     else
+      check_status
       @bike_array.pop
     end
   end
@@ -31,14 +32,11 @@ class DockingStation
   def dock_full?
     @bike_array.size == @capacity
   end
-end
 
-class Bike
-  def working?
-      true
-  end
-
-  def broken?
-    'Broken'
+  def check_status
+    if @status = "broken"
+      fail 'This bike is broken'
+    else
+    end
   end
 end
