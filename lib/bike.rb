@@ -1,6 +1,6 @@
 class Bike
 
-  attr_reader :status
+  attr_accessor :status
 
   def initialize(status) #true = working, false = broken
     if status == "working"

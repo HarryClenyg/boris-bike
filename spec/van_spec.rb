@@ -16,12 +16,18 @@ describe Van do
     
   end
   
-  it 'throws an error if van retrieves a working bike (status = true)' do
-    bike = double(:bike, status: true)
-    station = double(:docking_station, bike_array: [bike])
+  # it 'throws an error if van retrieves a working bike (status = true)' do
+  #   bike = double(:bike, status: true)
+  #   station = double(:docking_station, bike_array: [bike])
     
-    expect{subject.broken_bikes[0]}.to raise_error "This bike is working"
+  #   expect{subject.broken_bikes[0]}.to raise_error "This bike is working"
     
+  # end
+
+  it 'van can deposit broken bikes at garage' do
+    expect()
   end
 
+#   it 'van can retrieve working bikes from garage' do
+#     expect(subject.retrieve_bikes
 end
