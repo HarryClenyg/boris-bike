@@ -3,6 +3,10 @@ class Bike
   attr_reader :status
 
   def initialize(status) #true = working, false = broken
-    @status = status
+    if "working"
+      @status = true
+    else
+      @status = false
+    end 
   end
 end

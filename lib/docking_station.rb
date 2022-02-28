@@ -15,8 +15,8 @@ class DockingStation
       fail 'No bikes available'
     else
       sort_by_status
-      @bike_array.pop
       check_status
+      @bike_array.pop
     end
   end
 

@@ -1,8 +1,8 @@
 require 'bike'
 
 describe Bike do
-  it "responds to the method working?" do
-    bike = Bike.new(@status)
-    expect(bike).to respond_to :working?
+  it "responds to the check status method" do
+    bike = Bike.new("working")
+    expect(bike.status).to be true
   end
 end
