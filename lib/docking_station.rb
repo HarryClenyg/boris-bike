@@ -3,6 +3,7 @@ require_relative 'bike'
 class DockingStation
   
   attr_reader :bike
+  attr_reader :bike_array
   attr_reader :capacity
   
   def initialize(bike_array = [], capacity= 20)
